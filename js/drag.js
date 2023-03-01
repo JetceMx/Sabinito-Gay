@@ -39,7 +39,7 @@ function shuffle(array) {
   shuffle(imgArray);
   
 // Crea un nuevo elemento de imagen 
- var newimg= document.createElement('img id="an1"'); 
+ var newimg= document.createElement('img'); 
 img1=imgArray[0]
 // Agrega la imagen al documento 
 document.body.appendChild(img1);
