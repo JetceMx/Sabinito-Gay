@@ -1,0 +1,37 @@
+body{
+   background-color: black;
+   background-image: url("../images/arcader.jpg");
+   background-repeat: no-repeat;
+    background-size: 700px 600px;
+    background-attachment: fixed;
+    background-position: center;
+}
+body {
+    font-family: 'Press Start 2P', serif;
+    font-size: 15px;
+    text-shadow: 4px 4px 4px #aaa;
+  }
+.main-container{
+    display: flex;
+}
+.sub1{
+    margin-top: 200px;
+    margin-left: 410px;
+    
+    width: 519px;
+    height: 200px;
+}
+.mar{
+    background-image: url("../images/fondoe.jpg");
+    background-repeat: no-repeat;
+    background-size: 523px 310px;
+    background-attachment: fixed;
+    background-position: center ;
+    
+   border-radius: 5%;
+    width: 523px;
+    height: 210px;
+}
+.name{
+    margin-left: 150px;
+}
