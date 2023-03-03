@@ -1,5 +1,38 @@
-var imgArray = new Array();
+//fondo canvas
+var imgArray1=new Array();
+imgArray1[0] = new Image();
+imgArray1[0].src = './images/nborre.png';
+imgArray1[0].id = 'imagen_0';
 
+
+imgArray1[1] = new Image();
+imgArray1[1].src = './images/ncaballio.png';
+imgArray1[1].id = 'imagen_0';
+
+imgArray1[2] = new Image();
+imgArray1[2].src = './images/ncerdo.png';
+imgArray1[2].id = 'imagen_0';
+
+imgArray1[3] = new Image();
+imgArray1[3].src = './images/ngallio.png';
+imgArray1[3].id = 'imagen_0';
+
+imgArray1[4] = new Image();
+imgArray1[4].src = './images/npato.png';
+imgArray1[4].id = 'imagen_0';
+
+imgArray1[5] = new Image();
+imgArray1[5].src = './images/nvaca.png';
+imgArray1[5].id = 'imagen_0';
+
+shuffle(imgArray1);
+
+//var intro = document.getElementById('lienzo_0');
+//intro.style.backgroundImage = "url("+imgArray1[0]+")";
+
+
+//nombres imgs
+var imgArray = new Array();
 imgArray[0] = new Image();
 imgArray[0].src = './images/borre.png';
 imgArray[0].id = 'imagen_1';
@@ -40,18 +73,17 @@ function shuffle(array) {
 
 shuffle(imgArray);
 
-
-
 // Crea un nuevo elemento de imagen 
 //var newimg = document.createElement('img');
 
 var img1 = new Image();
-img1 = imgArray[0];
+img1 = imgArray1[0];
 console.log(img1);
 // Agrega la imagen al documento 
 const ele=document.getElementById("cajaimagenes")
 const ch=document.getElementById("imagen_1")
 ele.appendChild(img1,ch);
+img1.style.width = "80px";
 
 
 document.createElement('img');
@@ -90,7 +122,7 @@ function iniciar() {
         lienzo = soltarChido.getContext('2d');
         fondo.src = imgArray[i].src;
        
-        lienzo.drawImage(fondo, 10, 10);
+        lienzo.drawImage(fondo, 10, 10,130,100);
         soltarChido.addEventListener('dragenter', eventoEnter, false);
         soltarChido.addEventListener('dragover', eventoOver, false);
         soltarChido.addEventListener('drop', soltado, false);
@@ -128,7 +160,7 @@ function soltado(e) {
     var posx = e.pageX - e.target.offsetLeft;
     var posy = e.pageY - e.target.offsetTop;
     lienzo = e.target.getContext('2d');
-    lienzo.drawImage(elemento, posx, posy);
+    lienzo.drawImage(elemento, posx, posy,100,20);
 }
 
 window.addEventListener('load', iniciar, false)
