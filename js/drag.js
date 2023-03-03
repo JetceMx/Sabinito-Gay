@@ -149,9 +149,14 @@ function iniciar() {
     for (let i = 0; i < 6; i++) {
         soltarChido = document.getElementById('lienzo_' + i);
         lienzo = soltarChido.getContext('2d');
+<<<<<<< Updated upstream
         fondo.src = nombresArray[i].src;
 
         lienzo.drawImage(fondo, 30, 0, 130, 100);
+=======
+        fondo.src = imgArray[i].src;
+        lienzo.drawImage(fondo, 10, 10,130,100);
+>>>>>>> Stashed changes
         soltarChido.addEventListener('dragenter', eventoEnter, false);
         soltarChido.addEventListener('dragover', eventoOver, false);
         soltarChido.addEventListener('drop', soltado, false);
