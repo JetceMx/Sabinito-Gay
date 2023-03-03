@@ -2,28 +2,28 @@
 var imgArray1=new Array();
 imgArray1[0] = new Image();
 imgArray1[0].src = './images/nborre.png';
-imgArray1[0].id = 'imagen_0';
+imgArray1[0].id = 'imagen_01';
 
 
 imgArray1[1] = new Image();
 imgArray1[1].src = './images/ncaballio.png';
-imgArray1[1].id = 'imagen_0';
+imgArray1[1].id = 'imagen_02';
 
 imgArray1[2] = new Image();
 imgArray1[2].src = './images/ncerdo.png';
-imgArray1[2].id = 'imagen_0';
+imgArray1[2].id = 'imagen_03';
 
 imgArray1[3] = new Image();
 imgArray1[3].src = './images/ngallio.png';
-imgArray1[3].id = 'imagen_0';
+imgArray1[3].id = 'imagen_04';
 
 imgArray1[4] = new Image();
 imgArray1[4].src = './images/npato.png';
-imgArray1[4].id = 'imagen_0';
+imgArray1[4].id = 'imagen_05';
 
 imgArray1[5] = new Image();
 imgArray1[5].src = './images/nvaca.png';
-imgArray1[5].id = 'imagen_0';
+imgArray1[5].id = 'imagen_06';
 
 shuffle(imgArray1);
 
@@ -80,34 +80,61 @@ var img1 = new Image();
 img1 = imgArray1[0];
 console.log(img1);
 // Agrega la imagen al documento 
-const ele=document.getElementById("cajaimagenes")
-const ch=document.getElementById("imagen_1")
-ele.appendChild(img1,ch);
+const ele1=document.getElementById("cajaimagenes")
+const ch1=document.getElementById("imagen_1")
+ele1.appendChild(img1,ch1);
 img1.style.width = "80px";
+img1.style.height="20px"
+
+document.createElement('img');
+var img2 = imgArray1[1]
+// Agrega la imagen al documento 
+const ele2=document.getElementById("cajaimagenes")
+const ch2=document.getElementById("imagen_1")
+ele2.appendChild(img2,ch2);
+img2.style.width = "80px";
+img2.style.height="20px"
 
 
 document.createElement('img');
-var img2 = imgArray[1]
+img3 = imgArray1[2]
 // Agrega la imagen al documento 
-
-document.createElement('img');
-img3 = imgArray[2]
-// Agrega la imagen al documento 
-
-
-document.createElement('img');
-img4 = imgArray[3]
-// Agrega la imagen al documento 
-
-document.createElement('img');
-img5 = imgArray[4]
-// Agrega la imagen al documento 
+const ele3=document.getElementById("cajaimagenes")
+const ch3=document.getElementById("imagen_1")
+ele3.appendChild(img3,ch3);
+img3.style.width = "80px";
+img3.style.height="20px"
 
 
 document.createElement('img');
-img6 = imgArray[5]
+img4 = imgArray1[3]
 // Agrega la imagen al documento 
-// document.body.appendChild(img6);
+const ele4=document.getElementById("cajaimagenes")
+const ch4=document.getElementById("imagen_1")
+ele4.appendChild(img4,ch4);
+img4.style.width = "70px";
+img4.style.height="20px"
+
+
+document.createElement('img');
+img5 = imgArray1[4]
+// Agrega la imagen al documento 
+const ele5=document.getElementById("cajaimagenes")
+const ch5=document.getElementById("imagen_1")
+ele5.appendChild(img5,ch5);
+img5.style.width = "70px";
+img5.style.height="20px"
+
+
+document.createElement('img');
+img6 = imgArray1[5]
+// Agrega la imagen al documento 
+const ele6=document.getElementById("cajaimagenes")
+const ch6=document.getElementById("imagen_1")
+ele6.appendChild(img6,ch6);
+img6.style.width = "80px";
+img6.style.height="20px"
+
 
 function iniciar() {
     var fondo = new Image();
@@ -159,6 +186,7 @@ function soltado(e) {
     console.log(id);
     var posx = e.pageX - e.target.offsetLeft;
     var posy = e.pageY - e.target.offsetTop;
+    console.log(elemento)
     lienzo = e.target.getContext('2d');
     lienzo.drawImage(elemento, posx, posy,100,20);
 }
