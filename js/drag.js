@@ -1,22 +1,28 @@
 var imgArray = new Array();
 
 imgArray[0] = new Image();
-imgArray[0].src = 'images/borre.png';
+imgArray[0].src = './images/borre.png';
+imgArray[0].id = 'imagen_1';
 
 imgArray[1] = new Image();
-imgArray[1].src = 'images/caballio.png';
+imgArray[1].src = './images/caballio.png';
+imgArray[1].id = 'imagen_1';
 
 imgArray[2] = new Image();
-imgArray[2].src = 'images/cerdo.png';
+imgArray[2].src = './images/cerdo.png';
+imgArray[2].id = 'imagen_1';
 
 imgArray[3] = new Image();
-imgArray[3].src = 'images/gallio.png';
+imgArray[3].src = './images/gallio.png';
+imgArray[3].id = 'imagen_1';
 
 imgArray[4] = new Image();
-imgArray[4].src = 'images/pato.png';
+imgArray[4].src = './images/pato.png';
+imgArray[4].id = 'imagen_1';
 
 imgArray[5] = new Image();
-imgArray[5].src = 'images/vaca.png';
+imgArray[5].src = './images/vaca.png';
+imgArray[5].id = 'imagen_1';
 
 function shuffle(array) {
     let currentIndex = array.length, randomIndex;
@@ -34,10 +40,19 @@ function shuffle(array) {
 
 shuffle(imgArray);
 
+
+
 // Crea un nuevo elemento de imagen 
-var newimg = document.createElement('img');
-var img1 = imgArray[0]
+//var newimg = document.createElement('img');
+
+var img1 = new Image();
+img1 = imgArray[0];
+console.log(img1);
 // Agrega la imagen al documento 
+const ele=document.getElementById("cajaimagenes")
+const ch=document.getElementById("imagen_1")
+ele.appendChild(img1,ch);
+
 
 document.createElement('img');
 var img2 = imgArray[1]
@@ -74,6 +89,7 @@ function iniciar() {
         soltarChido = document.getElementById('lienzo_' + i);
         lienzo = soltarChido.getContext('2d');
         fondo.src = imgArray[i].src;
+       
         lienzo.drawImage(fondo, 10, 10);
         soltarChido.addEventListener('dragenter', eventoEnter, false);
         soltarChido.addEventListener('dragover', eventoOver, false);
@@ -108,6 +124,7 @@ function soltado(e) {
     e.preventDefault();
     var id = e.dataTransfer.getData('Text');
     var elemento = document.getElementById(id);
+    console.log(id);
     var posx = e.pageX - e.target.offsetLeft;
     var posy = e.pageY - e.target.offsetTop;
     lienzo = e.target.getContext('2d');
