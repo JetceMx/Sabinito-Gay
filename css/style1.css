@@ -5,11 +5,16 @@ body {
     -o-background-size: cover;
     background-size: cover;
 }
-
-.espacio {
-    border: 1px solid red;
+.mul{
+    display: flex;
+    border: 2px dashed red;
 }
 
+#conta{
+    margin-left: 600px;
+    font-family: 'Press Start 2P', serif;
+    font-size: 15px;
+}
 .contenedor {
     height: 550px;
     padding: 5px;

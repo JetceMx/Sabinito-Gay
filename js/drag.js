@@ -181,23 +181,32 @@ function arrastrado(e) {
     e.dataTransfer.setDragImage(e.target, 0, 0)
     e.target.style.opacity = '0.4';
 }
-
+var conta=0;
+var conta2=0;
 function soltado(e) {
     e.preventDefault();
     var id = e.dataTransfer.getData('Text');
     var elemento = document.getElementById(id);
     var posx = e.pageX - e.target.offsetLeft;
     var posy = e.pageY - e.target.offsetTop;
-
+    
     if (elemento.id == e.target.className) {
         animal.src = "./audios/" + elemento.id + ".mp3";
         animal.play();
         lienzo = e.target.getContext('2d');
         lienzo.drawImage(elemento, posx, posy, 100, 20);
         elemento.style.visibility = 'hidden'
+       conta+=100;
+       document.getElementById("conta").innerHTML="PUNTAJE:"+conta;
+       conta2+=1;
+       if(conta2==6){
+        window.open("ganar.html");
+       }
     } else {
         sonidoError.play();
         e.target.style.opacity = '1';
+        conta-=50;
+        document.getElementById("conta").innerHTML="PUNTAJE:"+conta;
     }
 
 }
