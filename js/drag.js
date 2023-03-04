@@ -29,6 +29,7 @@ shuffle(canvasArray);
 var sonidoError = new Audio();
 sonidoError.src = "./audios/Error.mp3";
 var animal = new Audio();
+var musicaFondo = new Audio('./audios/fondoJuego.mp3');
 
 //nombres imgs
 var nombresArray = new Array();
@@ -135,6 +136,13 @@ img6.style.width = "100px";
 img6.style.height = "35px"
 img6.style.padding = "10px";
 
+function musicaReproducir() {
+    musicaFondo.play();
+}
+
+function musicaPausar() {
+    musicaFondo.pause();
+}
 
 function iniciar() {
     var fondo = new Image();
@@ -158,12 +166,12 @@ function iniciar() {
 }
 
 function eventoEnter(e) {
-    //console.log("Soy el evento dragenter");
+
     e.preventDefault()
 }
 
 function eventoOver(e) {
-    //console.log("Soy el evento dragover");
+
     e.preventDefault()
 }
 
@@ -240,7 +248,5 @@ function formatearMs(tiempo_ms) {
     }
     return M.ceros(2) + ":" + S.ceros(2);
 }
-
-
 
 window.addEventListener('load', iniciar, false)

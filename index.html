@@ -13,6 +13,10 @@
 <body>
     <div class="mul">
         <div id="tiempo">00:00:00</div>
+        <div class="reproductor">
+            <button id="musica" onclick="musicaReproducir()">Reproducir</button>
+            <button id="musica" onclick="musicaPausar()">Pausa</button>
+        </div>
         <div id="conta">
             PUNTAJE:
             <p id="puntos"></p>
@@ -29,7 +33,7 @@
             <canvas id="lienzo_5" width="250" height="100"></canvas>
         </section>
     </div>
-    <script src="js/drag.js"></script>
+    <script src="js/drag.js" defer></script>
 </body>
 
 </html>
