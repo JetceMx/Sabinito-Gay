@@ -202,7 +202,9 @@ function soltado(e) {
         if (conta2 == 6) {
             cronometrar = false;
             console.log(acumulado / 1000);
-            window.open("ganar.html");
+            window.open("ganar.html","_self")
+
+
         }
     } else {
         sonidoError.play();

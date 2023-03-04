@@ -1,2 +1,3 @@
 var feli = new Audio();
-feli="";
+feli.src="./audios/yay.mp3";
+feli.play();
