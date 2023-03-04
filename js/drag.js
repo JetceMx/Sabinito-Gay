@@ -2,60 +2,59 @@
 var canvasArray = new Array();
 canvasArray[0] = new Image();
 canvasArray[0].src = './images/nborre.png';
-canvasArray[0].id = 'imagen_01';
-
+canvasArray[0].id = 'borrego';
 
 canvasArray[1] = new Image();
 canvasArray[1].src = './images/ncaballio.png';
-canvasArray[1].id = 'imagen_02';
+canvasArray[1].id = 'juan';
 
 canvasArray[2] = new Image();
 canvasArray[2].src = './images/ncerdo.png';
-canvasArray[2].id = 'imagen_03';
+canvasArray[2].id = 'cerdo';
 
 canvasArray[3] = new Image();
 canvasArray[3].src = './images/ngallio.png';
-canvasArray[3].id = 'imagen_04';
+canvasArray[3].id = 'gallo';
 
 canvasArray[4] = new Image();
 canvasArray[4].src = './images/npato.png';
-canvasArray[4].id = 'imagen_05';
+canvasArray[4].id = 'pato';
 
 canvasArray[5] = new Image();
 canvasArray[5].src = './images/nvaca.png';
-canvasArray[5].id = 'imagen_06';
+canvasArray[5].id = 'vaca';
 
 shuffle(canvasArray);
 
-//var intro = document.getElementById('lienzo_0');
-//intro.style.backgroundImage = "url("+imgArray1[0]+")";
-
+var sonidoError = new Audio();
+sonidoError.src = "./audios/Error.mp3";
+var animal = new Audio();
 
 //nombres imgs
 var nombresArray = new Array();
 nombresArray[0] = new Image();
 nombresArray[0].src = './images/borre.png';
-nombresArray[0].id = 'imagen_1';
+nombresArray[0].id = 'borrego';
 
 nombresArray[1] = new Image();
 nombresArray[1].src = './images/caballio.png';
-nombresArray[1].id = 'imagen_1';
+nombresArray[1].id = 'juan';
 
 nombresArray[2] = new Image();
 nombresArray[2].src = './images/cerdo.png';
-nombresArray[2].id = 'imagen_1';
+nombresArray[2].id = 'cerdo';
 
 nombresArray[3] = new Image();
 nombresArray[3].src = './images/gallio.png';
-nombresArray[3].id = 'imagen_1';
+nombresArray[3].id = 'gallo';
 
 nombresArray[4] = new Image();
 nombresArray[4].src = './images/pato.png';
-nombresArray[4].id = 'imagen_1';
+nombresArray[4].id = 'pato';
 
 nombresArray[5] = new Image();
 nombresArray[5].src = './images/vaca.png';
-nombresArray[5].id = 'imagen_1';
+nombresArray[5].id = 'vaca';
 
 function shuffle(array) {
     let currentIndex = array.length, randomIndex;
@@ -78,7 +77,6 @@ shuffle(nombresArray);
 
 var img1 = new Image();
 img1 = canvasArray[0];
-console.log(img1);
 // Agrega la imagen al documento 
 const ele1 = document.getElementById("cajaimagenes")
 const ch1 = document.getElementById("imagen_1")
@@ -150,7 +148,8 @@ function iniciar() {
         soltarChido = document.getElementById('lienzo_' + i);
         lienzo = soltarChido.getContext('2d');
         fondo.src = nombresArray[i].src;
-
+        lienzo.canvas.className = nombresArray[i].id;
+        // console.log(lienzo.canvas.className);
         lienzo.drawImage(fondo, 30, 0, 130, 100);
         soltarChido.addEventListener('dragenter', eventoEnter, false);
         soltarChido.addEventListener('dragover', eventoOver, false);
@@ -159,38 +158,48 @@ function iniciar() {
 }
 
 function eventoEnter(e) {
-    console.log("Soy el evento dragenter");
+    //console.log("Soy el evento dragenter");
     e.preventDefault()
 }
 
 function eventoOver(e) {
-    console.log("Soy el evento dragover");
+    //console.log("Soy el evento dragover");
     e.preventDefault()
 }
 
 function finalizado(e) {
     console.log("Soy el evento de finalizado");
     elemento = e.target
-    elemento.style.visibility = 'hidden'
+    e.target.style.opacity = ''; // Pone la opacidad del elemento a 1 	
 }
 
 function arrastrado(e) {
     console.log("Soy el evento de arrastrado");
     elemento = e.target
+    e.dataTransfer.effecAllowed = 'move';
     e.dataTransfer.setData('Text', elemento.getAttribute('id'))
     e.dataTransfer.setDragImage(e.target, 0, 0)
+    e.target.style.opacity = '0.4';
 }
 
 function soltado(e) {
     e.preventDefault();
     var id = e.dataTransfer.getData('Text');
     var elemento = document.getElementById(id);
-    console.log(id);
     var posx = e.pageX - e.target.offsetLeft;
     var posy = e.pageY - e.target.offsetTop;
-    console.log(elemento)
-    lienzo = e.target.getContext('2d');
-    lienzo.drawImage(elemento, posx, posy, 100, 20);
+
+    if (elemento.id == e.target.className) {
+        animal.src = "./audios/" + elemento.id + ".mp3";
+        animal.play();
+        lienzo = e.target.getContext('2d');
+        lienzo.drawImage(elemento, posx, posy, 100, 20);
+        elemento.style.visibility = 'hidden'
+    } else {
+        sonidoError.play();
+        e.target.style.opacity = '1';
+    }
+
 }
 
 window.addEventListener('load', iniciar, false)
