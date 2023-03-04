@@ -222,16 +222,17 @@ let acumulado = 0;
 setInterval(() => {
     let tiempo = document.getElementById("tiempo");
     if (cronometrar) {
-        acumulado = Date.now() - tiempoRef;
+        acumulado += Date.now() - tiempoRef;
     }
+    tiempoRef = Date.now();
     tiempo.innerHTML = formatearMs(acumulado);
 }, 1000 / 60);
 
 function formatearMs(tiempo_ms) {
     let MS = tiempo_ms % 1000;
-    let S = Math.floor(((tiempo_ms - MS) / 1000) % 60);
-    let M = Math.floor((S / 60) % 60);
-    let H = Math.floor(M / 60);
+    let St = Math.floor(((tiempo_ms - MS) / 1000));
+    let S = St % 60;
+    let M = Math.floor((St / 60) % 60);
     Number.prototype.ceros = function (n) {
         return (this + "").padStart(n, 0);
     }
