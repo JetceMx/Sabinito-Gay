@@ -181,34 +181,63 @@ function arrastrado(e) {
     e.dataTransfer.setDragImage(e.target, 0, 0)
     e.target.style.opacity = '0.4';
 }
-var conta=0;
-var conta2=0;
+var conta = 0;
+var conta2 = 0;
 function soltado(e) {
     e.preventDefault();
     var id = e.dataTransfer.getData('Text');
     var elemento = document.getElementById(id);
     var posx = e.pageX - e.target.offsetLeft;
     var posy = e.pageY - e.target.offsetTop;
-    
+
     if (elemento.id == e.target.className) {
         animal.src = "./audios/" + elemento.id + ".mp3";
         animal.play();
         lienzo = e.target.getContext('2d');
         lienzo.drawImage(elemento, posx, posy, 100, 20);
         elemento.style.visibility = 'hidden'
-       conta+=100;
-       document.getElementById("conta").innerHTML="PUNTAJE:"+conta;
-       conta2+=1;
-       if(conta2==6){
-        window.open("ganar.html");
-       }
+        conta += 100;
+        document.getElementById("conta").innerHTML = "PUNTAJE:" + conta;
+        conta2 += 1;
+        if (conta2 == 6) {
+            cronometrar = false;
+            console.log(acumulado / 1000);
+            window.open("ganar.html");
+        }
     } else {
         sonidoError.play();
         e.target.style.opacity = '1';
-        conta-=50;
-        document.getElementById("conta").innerHTML="PUNTAJE:"+conta;
+        conta -= 50;
+        document.getElementById("puntos").innerHTML = conta;
     }
 
 }
+
+/* Contador */
+
+let tiempoRef = Date.now();
+let cronometrar = true;
+let acumulado = 0;
+
+setInterval(() => {
+    let tiempo = document.getElementById("tiempo");
+    if (cronometrar) {
+        acumulado = Date.now() - tiempoRef;
+    }
+    tiempo.innerHTML = formatearMs(acumulado);
+}, 1000 / 60);
+
+function formatearMs(tiempo_ms) {
+    let MS = tiempo_ms % 1000;
+    let S = Math.floor(((tiempo_ms - MS) / 1000) % 60);
+    let M = Math.floor((S / 60) % 60);
+    let H = Math.floor(M / 60);
+    Number.prototype.ceros = function (n) {
+        return (this + "").padStart(n, 0);
+    }
+    return M.ceros(2) + ":" + S.ceros(2);
+}
+
+
 
 window.addEventListener('load', iniciar, false)
