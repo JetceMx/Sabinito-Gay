@@ -1,4 +1,7 @@
-
+function guardarDatos() {
+    localStorage.Nom = document.getElementById("Nom").value;
+    
+}
 
 function validar() {
     //obteniendo el valor que se puso en campo text del formulario
@@ -12,8 +15,5 @@ function validar() {
 }
 
 
-function guardarDatos() {
-    localStorage.Nom = document.getElementById("Nom").value;
-    
-}
+
 
