@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'Letras';
+    src: url("../fonts/IndieFlower-Regular.ttf");
+}
+
+div{
+    height: 400px;
+    width: 1200px;
+    background-color: #FFF;
+    opacity: 0.91;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+body {
+    margin:0;
+    background-image: url("../images/img.jpg");
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  a{
+    text-decoration:none;
+    color:#FFF;
+  }
+
+form{
+    justify-content: center;
+    text-align: center;
+}
+
+#Nombre{
+    text-align: center;
+    font-family: 'Letras';
+    text-align:center;
+    font-weight: bold;
+    font-size: 30px;
+    color: red;
+}
+
+#Nom{
+    border-radius: 20px;
+    
+}
+
+  .rainbow-button {
+    width:calc(20vw + 6px);
+    height:calc(8vw + 6px);
+    background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+    border-radius:5px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-transform:uppercase;
+    font-size:3vw;
+    font-weight:bold;
+    font-family: 'Letras';
+  }
+  .rainbow-button:after {
+    content:attr(alt);
+    width:20vw;
+    height:8vw;
+    background-color:#191919;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .rainbow-button:hover {
+    animation:slidebg 2s linear infinite;
+  }
+
+  h2,h3{
+    font-family: 'Letras';
+}
+  
+  @keyframes slidebg {
+    to {
+      background-position:20vw;
+    }
+  }
