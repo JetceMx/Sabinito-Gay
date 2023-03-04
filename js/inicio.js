@@ -1,3 +1,5 @@
+
+
 var img = new Image();
 img.src = "images/Granja.jpg";
 
@@ -45,9 +47,14 @@ class CanvasButton{
 
   clicker(evt) {
     if (evt.pageX-this.rect.left>=this.x && evt.pageX-this.rect.left<=this.x+this.width && evt.pageY-this.rect.top>=this.y && evt.pageY-this.rect.top<=this.y+this.height){
-        window.open("index.html");
-    }
+      
+      var B1 = window.open("Usuario.html");
+      
   }
+  }
+  
+
+
   yes(){
     this.ctx.lineWidth = 1;
   }
@@ -77,7 +84,7 @@ var ctx = canvas.getContext("2d");
 var rect=canvas.getBoundingClientRect();
 
 var CButtons=[];
-CButtons[0] = new CanvasButton(canvas,630,470,100,25,'JUGAR','white',true);
+CButtons[0] = new CanvasButton(canvas,610,470,155,25,'Registrate','white',true);
 
 
 
