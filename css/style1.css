@@ -11,11 +11,13 @@ body {
 }
 
 .contenedor {
+    height: 550px;
     padding: 5px;
     margin: 0 auto;
     width: 80%;
     display: flex;
     flex-direction: row;
+    align-items: end;
 }
 
 #cajaimagenes {
