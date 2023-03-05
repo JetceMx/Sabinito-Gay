@@ -1,4 +1,7 @@
-
+var musicaFondo = new Audio('audios/fondoJuego.mp3');
+function musicaReproducir() {
+  musicaFondo.play();
+}
 
 var img = new Image();
 img.src = "images/Granja.jpg";
@@ -47,13 +50,13 @@ class CanvasButton{
 
   clicker(evt) {
     if (evt.pageX-this.rect.left>=this.x && evt.pageX-this.rect.left<=this.x+this.width && evt.pageY-this.rect.top>=this.y && evt.pageY-this.rect.top<=this.y+this.height){
-      
       var B1 = window.open("Usuario.html");
-      
-  }
+      var B1 = musicaFondo.play();
+  }else{
+    var B2 = musicaFondo.pause();
   }
   
-
+  }
 
   yes(){
     this.ctx.lineWidth = 1;
@@ -85,6 +88,7 @@ var rect=canvas.getBoundingClientRect();
 
 var CButtons=[];
 CButtons[0] = new CanvasButton(canvas,610,470,155,25,'Registrate','white',true);
+
 
 
 

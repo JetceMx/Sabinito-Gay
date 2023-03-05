@@ -189,6 +189,7 @@ function arrastrado(e) {
     e.dataTransfer.setDragImage(e.target, 0, 0)
     e.target.style.opacity = '0.4';
 }
+
 var conta = 0;
 var conta2 = 0;
 function soltado(e) {
