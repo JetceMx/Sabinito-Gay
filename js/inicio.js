@@ -3,6 +3,7 @@ function musicaReproducir() {
   musicaFondo.play();
 }
 
+
 var img = new Image();
 img.src = "images/Granja.jpg";
 

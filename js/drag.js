@@ -206,6 +206,7 @@ function soltado(e) {
         lienzo.drawImage(elemento, posx, posy, 100, 20);
         elemento.style.visibility = 'hidden'
         conta += 100;
+        console.log(conta);
         document.getElementById("conta").innerHTML = "PUNTAJE:" + conta;
         conta2 += 1;
         if (conta2 == 6) {
@@ -219,9 +220,10 @@ function soltado(e) {
         sonidoError.play();
         e.target.style.opacity = '1';
         conta -= 50;
+        console.log(conta);
         document.getElementById("puntos").innerHTML = conta;
     }
-
+    console.log(conta);
 }
 
 /* Contador */
