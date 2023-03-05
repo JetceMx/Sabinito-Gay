@@ -69,3 +69,23 @@ body {
 #cajasoltar>canvas {
     margin: 10px;
 }
+
+#pausa:hover{
+    opacity: 0.5;
+    background-color: black;
+    color: white;
+}
+
+
+#pausa{
+    color: black;
+    background-color: unset;
+    border-radius: 100px;
+    height: 100px;
+    width: 100px;
+    font-size:3vw;
+    cursor: pointer;
+}
+
+
+

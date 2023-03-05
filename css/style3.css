@@ -3,7 +3,7 @@
     src: url("../fonts/IndieFlower-Regular.ttf");
 }
 
-div{
+#Div{
     height: 400px;
     width: 1200px;
     background-color: #FFF;

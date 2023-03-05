@@ -1,6 +1,11 @@
+
 function guardarDatos() {
     localStorage.Nom = document.getElementById("Nom").value;
-    
+    localStorage.puntos = document.getElementById("puntos").value;
+    localStorage.puntos = 0
+    localStorage.tiempo = document.getElementById("tiempo").value;
+    localStorage.tiempo = 00-00-00;
+
 }
 
 function validar() {
