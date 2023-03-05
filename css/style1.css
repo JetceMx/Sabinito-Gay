@@ -70,15 +70,26 @@ body {
     margin: 10px;
 }
 
+#pausa{
+    color: black;
+    background-color: unset;
+    border-inline-end-color: red;
+    border-inline-color: yellow;
+    border-radius: 100px;
+    height: 100px;
+    width: 100px;
+    font-size:3vw;
+    cursor: pointer;
+}
+
 #pausa:hover{
     opacity: 0.5;
     background-color: black;
     color: white;
 }
 
-
-#pausa{
-    color: black;
+#Salir{
+    color: rgb(255, 0, 0);
     background-color: unset;
     border-radius: 100px;
     height: 100px;
@@ -87,5 +98,8 @@ body {
     cursor: pointer;
 }
 
-
-
+#Salir:hover{
+    opacity: 0.5;
+    background-color: black;
+    color: rgb(255, 0, 0);
+}

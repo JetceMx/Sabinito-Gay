@@ -250,4 +250,12 @@ function formatearMs(tiempo_ms) {
     return M.ceros(2) + ":" + S.ceros(2);
 }
 
+function Salir(){
+    if(confirm("Estas seguro que Deseas salir ?")){
+        alert("Has salido Exitosamente :D");
+        window.open("Inicio.html","_self")
+
+    }
+}
+
 window.addEventListener('load', iniciar, false)
